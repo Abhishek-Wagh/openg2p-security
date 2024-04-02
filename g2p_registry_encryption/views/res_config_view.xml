@@ -6,7 +6,21 @@
         <field name="priority" eval="999" />
         <field name="inherit_id" ref="base.res_config_settings_view_form" />
         <field name="arch" type="xml">
-            <xpath expr="//div[hasclass('settings')]" position="inside">
+            <xpath expr="//form" position="inside">
+                <app string="G2P Encryption Settings" name="g2p_encryption_config_settings">
+                    <block title="G2P Encryption Settings">
+                        <setting string="Encryption of fields" help="Encryption of the fields is through this option so be careful.">
+                            <field name="encrypt_fields"/>
+                        </setting>
+                    </block>
+                    <block title="G2P Decryption Settings">
+                        <setting string="Decrption of fields" help="Decryption of the fields is through this option so be careful.">
+                            <field name="decrypt_fields"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+            <!-- <xpath expr="//div[hasclass('settings')]" position="inside">
                 <div class="row mt16 o_settings_container" name="validation_container">
                     <div
                         class="col-12 col-lg-6 o_setting_box"
@@ -28,7 +42,7 @@
                         </div>
                     </div>
                 </div>
-            </xpath>
+            </xpath> -->
         </field>
     </record>
 </odoo>
